@@ -12,7 +12,7 @@ export default function Home() {
       <Suspense fallback={<Skeleton />}>
         <PostList />
       </Suspense>
-      <ProductList />
+      {/* <ProductList /> */}
       <Counter />
     </div>
   );
