@@ -2,7 +2,7 @@
 
 import prisma from '@/lib/prisma';
 import { createProductSchema, ProductInput } from '@/schemas/product';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 // function export in this file called: server function(server action)
 // next.js will create api end point for each function
@@ -29,4 +29,7 @@ export async function createProduct(input: ProductInput) {
     }
   });
   revalidatePath('/product');
+  // revalidatePath('/test');
+  // revalidatePath('/summary');
+  revalidateTag('GET_PRODUCT', 'weeks');
 }
